@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf7d289563a0e24f9deb1b48122f30c, type: 3}
+  m_Name: Unarmed
+  m_EditorClassIdentifier: 
+  itemName: Unarmed
+  itemIcon: {fileID: 0}
+  itemDescription: 
+  itemId: 0
+  weaponModel: {fileID: 1892507340490729486, guid: 8a99d8c93d0f93145840f2d8765c442c, type: 3}
+  canAim: 0
+  aim_State: 
+  isRequiredTwoHand: 0
+  mainHandEquipable: 1
+  offHandEquipable: 1
+  levelREQ: 0
+  guardAbsorption: 5
+  physicalDamage: 10
+  magicDamage: 0
+  pyroDamage: 0
+  hydroDamage: 0
+  geoDamage: 0
+  luminaDamage: 0
+  eclipeDamage: 0
+  poiseDamage: 2
+  lightAttack01Modifier: 1
+  lightAttack02Modifier: 1.1
+  heavyAttack01Modifier: 1.5
+  heavyAttack02Modifier: 1.8
+  chargeAttack01Modifier: 2
+  chargeAttack02Modifier: 2.5
+  runningLightAttackModifier: 1.2
+  runningHeavyAttackModifier: 2
+  baseStaminaCost: 5
+  runningLightAttackStaminaCostMultiplier: 1
+  runningHeavyAttackStaminaCostMultiplier: 1.5
+  lightAttackStaminaCostMultiplier: 0.8
+  heavyAttackStaminaCostMultiplier: 2
+  chargeAttackStaminaCostMultiplier: 2
+  oh_Attack_Action: {fileID: 11400000, guid: 03f6eedad7f2646019819df2fe84b3a2, type: 2}
+  oh_Heavy_Attack_Action: {fileID: 0}
