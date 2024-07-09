@@ -11,13 +11,12 @@ namespace AN
         {
             if (aiCharacterManager.characterCombatManager.currentTarget != null)
             {
-                Debug.Log( " Target "+aiCharacterManager.characterCombatManager.currentTarget.name+" Detected");
+                
             }
             else
             {
                 // continue search for target until find one
                 aiCharacterManager.aiCharacterCombatManager.FindTargetViaLineOfSign(aiCharacterManager);
-                Debug.Log(aiCharacterManager.name + " Searching for target");
             }
             
             return this;

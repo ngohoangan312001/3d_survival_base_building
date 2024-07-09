@@ -24,7 +24,7 @@ namespace AN
             DisableDamageCollider();
         }
         
-        public void FireRangeAttack()
+        public void FireRangeAttack(Vector3 targetDirection)
         {
             if (characterCausingDamage.IsOwner)
             {
@@ -38,7 +38,7 @@ namespace AN
                         RangeWeapon.timeSinceLastAttack = 0;
                         OnRangeAttack();
                         
-                        if (Physics.Raycast(transform.position, transform.forward,
+                        if (Physics.Raycast(PlayerCamera.Instance.cameraObject.transform.position, PlayerCamera.Instance.cameraObject.transform.forward,
                                 out RaycastHit hitInfo, RangeWeapon.maxDistance))
                         {
                             CharacterManager damageTarget = hitInfo.collider?.GetComponentInParent<CharacterManager>();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using AN;
@@ -39,12 +40,24 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float lockedCameraHeight = 2;
     [SerializeField] private float cameraHeightSpeed = 0.05f;
     [SerializeField] private float lockTargetFollowSpeed = 1;
+    [SerializeField] private LayerMask targetLayer;
     private List<CharacterManager> availableTargets = new List<CharacterManager>();
     public CharacterManager nearestLockOnTarget;
     public CharacterManager leftLockOnTarget;
     public CharacterManager rightLockOnTarget;
     private Coroutine cameraLockOnHeightCoroutine;
-    
+
+    private void Update()
+    {
+
+        Ray ray = cameraObject.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit raycastHit,float.MaxValue, targetLayer))
+        {
+            player.playerAnimatorManager.aimTarget.position = raycastHit.point;
+        }
+    }
+
     private void Awake()
     {
         if(Instance == null)

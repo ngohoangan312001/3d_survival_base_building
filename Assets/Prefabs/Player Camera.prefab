@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7287879057502511212}
   - component: {fileID: 2932244656054533961}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91021cc1791f14f6093d5fbf95f315d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObject: {fileID: 4796521951671935139}
+  player: {fileID: 2565537870038483975, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
   leftAndRightRotationSpeed: 220
   upAndDownRotationSpeed: 220
   minimumPivot: -30
@@ -180,8 +182,20 @@ MonoBehaviour:
   leftAndRightLookAngle: 0
   upAndDownLookAngle: 0
   cameraZPosition: 0
-  aimCameraZDistance: 0
-  aimCameraXDistance: 0
-  cameraObject: {fileID: 4796521951671935139}
-  player: {fileID: 2565537870038483975, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
+  aimCameraZDistance: -0.2
+  aimCameraXDistance: 0.7
   cameraPivotTransform: {fileID: 2101676736253721880}
+  lockOnRadius: 20
+  maximumLockOnDistance: 20
+  minimumViewableAngle: -50
+  maximumViewableAngle: 50
+  unlockedCameraHeight: 1.65
+  lockedCameraHeight: 2
+  cameraHeightSpeed: 0.05
+  lockTargetFollowSpeed: 1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 3255
+  nearestLockOnTarget: {fileID: 0}
+  leftLockOnTarget: {fileID: 0}
+  rightLockOnTarget: {fileID: 0}

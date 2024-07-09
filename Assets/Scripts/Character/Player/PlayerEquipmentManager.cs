@@ -327,7 +327,7 @@ namespace AN
                 DamageCollider weaponDamageCollider = rightWeaponManager.weaponDamageCollider;
                 if (weaponDamageCollider is RangeWeaponDamageCollider rangeWeaponDamageCollider)
                 {
-                    rangeWeaponDamageCollider.FireRangeAttack();
+                    rangeWeaponDamageCollider.FireRangeAttack(player.playerAnimatorManager.aimTarget.position);
                 }
             }
             

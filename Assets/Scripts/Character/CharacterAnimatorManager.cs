@@ -7,11 +7,15 @@ namespace AN
 {
     public class CharacterAnimatorManager : MonoBehaviour
     {
-        CharacterManager character;
-
+        CharacterManager character; 
+        
         private float vertical;
         private float horizontal;
-
+        
+        public Transform aimTarget;
+        
+        [HideInInspector] public LookAtTargetAnimationRigging lookAtTargetAnimationRigging;
+        
         [Header("Damage Animations")] 
         [SerializeField] private string lastDamageAnimationPlayed;
         
@@ -34,6 +38,7 @@ namespace AN
         protected virtual void Awake()
         {
             character = GetComponent<CharacterManager>();
+            lookAtTargetAnimationRigging = GetComponentInChildren<LookAtTargetAnimationRigging>();
         }
 
         protected virtual void Start()

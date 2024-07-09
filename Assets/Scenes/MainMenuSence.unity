@@ -6765,27 +6765,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173219678100202407, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2101676736253721880, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2932244656054533961, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: cameraHeightSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2932244656054533961, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: aimCameraXDistance
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2932244656054533961, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: aimCameraZDistance
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2932244656054533961, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: lockTargetFollowSpeed
-      value: 1
+      propertyPath: targetLayer.m_Bits
+      value: 2225
       objectReference: {fileID: 0}
     - target: {fileID: 4796521951671935139, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: near clip plane
@@ -6837,15 +6825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004468253730996314, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9200961728999185166, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: m_Name
       value: Player Camera (left & right)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9200961728999185166, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
