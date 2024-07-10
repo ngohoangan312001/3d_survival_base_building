@@ -32,7 +32,7 @@ namespace AN
             // attackRate       => Attack per minute
             // attackRate/60    => Attack per second
             // 1/attackRate/60  => Time between each attack in 1 second
-            if (timeSinceLastAttack < (1f/attackRate/60f))
+            if (timeSinceLastAttack < timeEachAttack)
             {
                 Debug.Log("Attack To Fast !!! "+ ((1f/attackRate/60f) - timeSinceLastAttack) + " In Cooldown");
                 return false;

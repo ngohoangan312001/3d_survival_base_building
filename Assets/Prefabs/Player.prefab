@@ -68,8 +68,8 @@ Transform:
   - {fileID: 6504477024213455032}
   - {fileID: 5905042564289913674}
   - {fileID: 6338169341808206093}
-  - {fileID: 4587685320669358553}
-  - {fileID: 2258469271432632388}
+  - {fileID: 2526735567803082499}
+  - {fileID: 8238899959486879210}
   m_Father: {fileID: 530196808869184028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &5610391832143804128
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c430f382484144e925c097c2d33cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 0.81
+  m_Weight: 0
   m_Data:
     m_ConstrainedObject: {fileID: 4430786752562202748}
     m_SourceObjects:
@@ -344,8 +344,8 @@ MonoBehaviour:
     m_MaintainOffset: 0
     m_ConstrainedAxes:
       x: 1
-      y: 0
-      z: 1
+      y: 1
+      z: 0
 --- !u!1 &932803056962044528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimTarget: {fileID: 5894193680875588715}
+  aimRig: {fileID: 3087155299231717560}
   lookAtTargetAnimationRigging: {fileID: 0}
   lastDamageAnimationPlayed: 
   hit_Forward_Medium_01: hit_Forward_Medium_01
@@ -1342,13 +1343,8 @@ MonoBehaviour:
   currentLeftHandWeapon: {fileID: 11400000, guid: 2b061685e6194bb47bc431e711562fde, type: 2}
   weaponInRightHandSlots:
   - {fileID: 11400000, guid: 1c9862647a1d8cf43b3b6e01cd3a9d0a, type: 2}
-  - {fileID: 11400000, guid: 17a20c80094662a4eb77a92b4f5f144a, type: 2}
-  - {fileID: 11400000, guid: 63e20557b2ef03e4980b0bf478502f91, type: 2}
-  - {fileID: 11400000, guid: 2b061685e6194bb47bc431e711562fde, type: 2}
   rightHandWeaponIndex: -1
-  weaponInLeftHandSlots:
-  - {fileID: 11400000, guid: 2b061685e6194bb47bc431e711562fde, type: 2}
-  - {fileID: 11400000, guid: 2b061685e6194bb47bc431e711562fde, type: 2}
+  weaponInLeftHandSlots: []
   leftHandWeaponIndex: -1
 --- !u!114 &6569788174709961408
 MonoBehaviour:
@@ -2070,6 +2066,92 @@ Transform:
   - {fileID: 493868937012894172}
   m_Father: {fileID: 3768090946396979164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2501220565915604221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403697983386310338}
+  - component: {fileID: 2070931396997772333}
+  m_Layer: 0
+  m_Name: Head Aim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &403697983386310338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501220565915604221}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7152455, y: -1.5230883, z: 2.3327506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5889322845802025329}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070931396997772333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501220565915604221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c430f382484144e925c097c2d33cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 0.5
+  m_Data:
+    m_ConstrainedObject: {fileID: 9125568754495335334}
+    m_SourceObjects:
+      m_Length: 1
+      m_Item0:
+        transform: {fileID: 5894193680875588715}
+        weight: 1
+      m_Item1:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item2:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item3:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item4:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item5:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item6:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item7:
+        transform: {fileID: 0}
+        weight: 0
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_MinLimit: -70
+    m_MaxLimit: 70
+    m_AimAxis: 4
+    m_UpAxis: 2
+    m_WorldUpType: 0
+    m_WorldUpObject: {fileID: 0}
+    m_WorldUpAxis: 2
+    m_MaintainOffset: 0
+    m_ConstrainedAxes:
+      x: 1
+      y: 1
+      z: 0
 --- !u!1 &2659490788337531213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,6 +2264,37 @@ CapsuleCollider:
   m_Height: 0.3202197
   m_Direction: 1
   m_Center: {x: 0.0000000061520695, y: 0.1707635, z: -0.0039532385}
+--- !u!1 &2873781341289288709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2526735567803082499}
+  m_Layer: 0
+  m_Name: ' Second Hand Weapon Grab_target'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2526735567803082499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873781341289288709}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.9990098, z: -0, w: -0.04449116}
+  m_LocalPosition: {x: 0.036, y: -0.048, z: 0.081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4430786752562202748}
+  m_LocalEulerAnglesHint: {x: 0, y: 185.1, z: 0}
 --- !u!1 &2917128394625699116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,6 +2326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7792744110195515469}
+  - {fileID: 403697983386310338}
   - {fileID: 3967048721488894165}
   - {fileID: 4589885201450831166}
   - {fileID: 5894193680875588715}
@@ -2240,7 +2354,7 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
     m_Visible: 1
-  - m_Transform: {fileID: 4587685320669358553}
+  - m_Transform: {fileID: 0}
     m_Style:
       shape: {fileID: 4300000, guid: 687b70eb9c49243639f9379f6965034f, type: 2}
       color: {r: 1, g: 0, b: 0, a: 0.5}
@@ -2248,7 +2362,7 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
     m_Visible: 1
-  - m_Transform: {fileID: 2258469271432632388}
+  - m_Transform: {fileID: 0}
     m_Style:
       shape: {fileID: 4300000, guid: e050c2b16fe384bd994474655a4b4968, type: 2}
       color: {r: 1, g: 0, b: 0, a: 0.5}
@@ -2377,6 +2491,37 @@ CapsuleCollider:
   m_Height: 0.36480215
   m_Direction: 1
   m_Center: {x: 1.09307854e-13, y: -0.027267413, z: -4.5139347e-11}
+--- !u!1 &3653495048982985100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8238899959486879210}
+  m_Layer: 0
+  m_Name: ' Second Hand Weapon Grab_hint'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8238899959486879210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653495048982985100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5000024, y: 0.49999753, z: -0.5000012, w: -0.49999896}
+  m_LocalPosition: {x: 0, y: -0.29, z: 0.168}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4430786752562202748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3677331148110300991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,37 +2706,6 @@ Transform:
   - {fileID: 7945929238354921704}
   m_Father: {fileID: 4430786752562202748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4254948605812851038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4587685320669358553}
-  m_Layer: 0
-  m_Name: ' Second Hand Weapon Grab_target'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4587685320669358553
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4254948605812851038}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9990098, z: -0, w: -0.04449116}
-  m_LocalPosition: {x: 0.15, y: 0.16, z: -0.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4430786752562202748}
-  m_LocalEulerAnglesHint: {x: 0, y: 185.1, z: 0}
 --- !u!1 &4400477430758421979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,37 +2915,6 @@ CapsuleCollider:
   m_Height: 0.24647637
   m_Direction: 1
   m_Center: {x: 0.00827157, y: 0.058594707, z: -0.018655736}
---- !u!1 &5224073566400320858
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2258469271432632388}
-  m_Layer: 0
-  m_Name: ' Second Hand Weapon Grab_hint'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2258469271432632388
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5224073566400320858}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.5000024, y: 0.49999753, z: -0.5000012, w: -0.49999896}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4430786752562202748}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5259764338922690622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,8 +3568,8 @@ MonoBehaviour:
     m_Root: {fileID: 8400714280125899916}
     m_Mid: {fileID: 4764735509508639053}
     m_Tip: {fileID: 9148105030664151671}
-    m_Target: {fileID: 4587685320669358553}
-    m_Hint: {fileID: 2258469271432632388}
+    m_Target: {fileID: 0}
+    m_Hint: {fileID: 0}
     m_TargetPositionWeight: 1
     m_TargetRotationWeight: 1
     m_HintWeight: 1
@@ -3635,7 +3718,7 @@ Transform:
   m_GameObject: {fileID: 7510105673202030787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.391, z: 2.321}
+  m_LocalPosition: {x: 0.843, y: 1.391, z: 2.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

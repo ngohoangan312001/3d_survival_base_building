@@ -32,8 +32,12 @@ MonoBehaviour:
   luminaDamage: 0
   eclipeDamage: 0
   poiseDamage: 20
-  lightAttackModifier: 1.2
-  heavyAttackModifier: 2
+  lightAttack01Modifier: 1
+  lightAttack02Modifier: 1.1
+  heavyAttack01Modifier: 1.5
+  heavyAttack02Modifier: 1.8
+  chargeAttack01Modifier: 2
+  chargeAttack02Modifier: 2.5
   runningLightAttackModifier: 1.2
   runningHeavyAttackModifier: 2
   baseStaminaCost: 1
@@ -41,13 +45,15 @@ MonoBehaviour:
   runningHeavyAttackStaminaCostMultiplier: 0
   lightAttackStaminaCostMultiplier: 1
   heavyAttackStaminaCostMultiplier: 1
+  chargeAttackStaminaCostMultiplier: 2
   oh_Attack_Action: {fileID: 11400000, guid: 6f636dc8f129fed46a1957d7c99fd01c, type: 2}
+  oh_Heavy_Attack_Action: {fileID: 0}
   maxDistance: 200
-  attackRate: 180
+  attackRate: 30
   reloadTime: 3
   timeEachAttack: 0
   needAmmo: 1
-  currentAmmo: 100
+  currentAmmo: 6
   magSize: 6
   timeSinceLastAttack: 0
   isReloading: 0

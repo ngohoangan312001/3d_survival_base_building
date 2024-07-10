@@ -39,7 +39,9 @@ namespace AN
         [SerializeField] private bool jumpInput;
         [SerializeField] private bool sprintInput;
         [SerializeField] private bool switchCameraMode;
-        [SerializeField] private bool aimInput;
+        public bool aimInput;
+        //Aim down sign
+        [SerializeField] private bool adsInput;
         
         [FormerlySerializedAs("leftClickInput")]
         [Header("COMBAT INPUT")]
@@ -130,9 +132,12 @@ namespace AN
                 playerControls.PlayerCamera.Movement.performed += i => cameraInput = i.ReadValue<Vector2>();
                 playerControls.PlayerCamera.SwitchCameraMode.performed += i => switchCameraMode = true;
                 
-                //Aim & Lock On
-                playerControls.PlayerAction.Aim.performed += i => aimInput = true;
-                playerControls.PlayerAction.Aim.canceled += i => aimInput = false;
+                //Aim
+                playerControls.PlayerAction.Aim.performed += i => aimInput = CheckIfWeaponCanAim();
+                
+                playerControls.PlayerAction.Aim.canceled += i => aimInput = !player.isThirdPersonCamera ;
+                
+                //Lock On
                 playerControls.PlayerAction.LockOn.performed += i => lock_On_Input = true;
                 playerControls.PlayerAction.SeekLeftLockOnTarget.performed += i => lock_On_Left_Input = true;
                 playerControls.PlayerAction.SeekRightLockOnTarget.performed += i => lockOnRightInput = true;
@@ -203,7 +208,7 @@ namespace AN
             HandleLockOnTargetSwitchInput();
             
             HandleAttackInput();
-            HandleHeavyAttackInput();
+            //HandleHeavyAttackInput();
             HandleChargeAttackInput();
             
             HandleSwitchWeaponInput();
@@ -257,8 +262,14 @@ namespace AN
 
             if (switchCameraMode)
             {
+                //Set Switch camera mode value to false
                 switchCameraMode = false;
+                
+                //Trigger Switch camera mode function
                 PlayerCamera.Instance.SwitchCameraMode();
+                
+                //go to aim mode when in first person mode  
+                aimInput = !player.isThirdPersonCamera;
             }
         }
 
@@ -341,24 +352,27 @@ namespace AN
                 }
             }
         }
-        
-        private void HandleAimInput()
+
+        public bool CheckIfWeaponCanAim()
         {
-            if (aimInput)
-            {
-                //Disable lock on when aiming
-                player.playerNetworkManager.isLockOn.Value = !aimInput;
                 
                 if (!player.playerInventoryManager.currentRightHandWeapon.canAim)
                 {
                     if (!player.playerInventoryManager.currentLeftHandWeapon.canAim)
                     {
                         player.playerNetworkManager.isAiming.Value = false;
-                        return;
+                        return false;
                     }
                 }
-            }
             
+            //Disable lock on when aiming
+            player.playerNetworkManager.isLockOn.Value = false;
+            return true;
+        }
+        
+        private void HandleAimInput()
+        {
+            CheckIfWeaponCanAim();
             player.playerNetworkManager.isAiming.Value = aimInput;
         }
 

@@ -47,6 +47,9 @@ namespace AN
 
                             Debug.Log("Hit: " + hitInfo.transform.name);
                             
+                            //Prevent weapon to damage the character wielding it
+                            if (damageTarget == characterCausingDamage) return;
+                            
                             //Todo: Check if the damageTarget can receive damage from this gameObject
 
                             //Todo: Check if target is blocking

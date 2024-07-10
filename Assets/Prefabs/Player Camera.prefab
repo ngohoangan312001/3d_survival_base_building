@@ -117,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 8004468253730996314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.65, z: 0}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,7 +173,7 @@ MonoBehaviour:
   player: {fileID: 2565537870038483975, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
   leftAndRightRotationSpeed: 220
   upAndDownRotationSpeed: 220
-  minimumPivot: -30
+  minimumPivot: -60
   maximumPivot: 60
   cameraCollisionRadius: 0.2
   colliderWithLayers:
@@ -182,8 +182,9 @@ MonoBehaviour:
   leftAndRightLookAngle: 0
   upAndDownLookAngle: 0
   cameraZPosition: 0
-  aimCameraZDistance: -0.2
-  aimCameraXDistance: 0.7
+  firstPersonCameraZIndex: 0.4
+  aimCameraZDistance: -0.5
+  aimCameraXDistance: 0.5
   cameraPivotTransform: {fileID: 2101676736253721880}
   lockOnRadius: 20
   maximumLockOnDistance: 20
@@ -195,7 +196,7 @@ MonoBehaviour:
   lockTargetFollowSpeed: 1
   targetLayer:
     serializedVersion: 2
-    m_Bits: 3255
+    m_Bits: 2065
   nearestLockOnTarget: {fileID: 0}
   leftLockOnTarget: {fileID: 0}
   rightLockOnTarget: {fileID: 0}

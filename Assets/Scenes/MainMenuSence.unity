@@ -6768,16 +6768,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2101676736253721880, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2932244656054533961, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
-      propertyPath: targetLayer.m_Bits
-      value: 2225
+      propertyPath: m_LocalPosition.y
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4796521951671935139, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: near clip plane
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7287879057502511212, guid: d382e0e8e447048f7af362696b46c01e, type: 3}
       propertyPath: m_LocalPosition.x

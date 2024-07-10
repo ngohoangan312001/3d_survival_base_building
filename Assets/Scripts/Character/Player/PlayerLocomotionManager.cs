@@ -170,19 +170,23 @@ namespace AN
             else
             {
                 targetRotationDirection = Vector3.zero;
-
+                
                 if (player.playerNetworkManager.isAiming.Value)
                 {
-                    targetRotationDirection = PlayerCamera.Instance.cameraObject.transform.forward;
-                    targetRotationDirection += PlayerCamera.Instance.cameraObject.transform.right;
+                    float rotationAngle = Quaternion.Angle(transform.rotation, PlayerCamera.Instance.cameraObject.transform.rotation);
+                    if (rotationAngle >= 70)
+                    {
+                        targetRotationDirection += PlayerCamera.Instance.cameraObject.transform.forward;
+                    }
                 }
                 else
                 {
                     targetRotationDirection = PlayerCamera.Instance.cameraObject.transform.forward * verticalMovement;
                     targetRotationDirection += PlayerCamera.Instance.cameraObject.transform.right * horizontalMovement;
-                    targetRotationDirection.y = 0;
                 }
- 
+                
+                targetRotationDirection.y = 0;
+                
                 targetRotationDirection.Normalize();
                 
                 if (targetRotationDirection == Vector3.zero)

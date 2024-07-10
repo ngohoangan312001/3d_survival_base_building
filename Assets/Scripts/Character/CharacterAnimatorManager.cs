@@ -1,8 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.Animations.Rigging;
+
 namespace AN
 {
     public class CharacterAnimatorManager : MonoBehaviour
@@ -13,6 +13,7 @@ namespace AN
         private float horizontal;
         
         public Transform aimTarget;
+        public Rig aimRig;
         
         [HideInInspector] public LookAtTargetAnimationRigging lookAtTargetAnimationRigging;
         
@@ -38,7 +39,6 @@ namespace AN
         protected virtual void Awake()
         {
             character = GetComponent<CharacterManager>();
-            lookAtTargetAnimationRigging = GetComponentInChildren<LookAtTargetAnimationRigging>();
         }
 
         protected virtual void Start()
