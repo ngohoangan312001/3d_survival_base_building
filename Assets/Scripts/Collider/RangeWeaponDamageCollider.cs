@@ -34,7 +34,12 @@ namespace AN
                     {
                         DisableDamageCollider();
                         PlayWeaponAttackVFX(transform.position, transform.rotation);
+                        
+                        //Subtract ammo from attack
                         RangeWeapon.currentAmmo--;
+                        //Update ammo to UI
+                        PlayerUIManager.instance.playerUIHudManager.SetNewRangeAmunitionValue(RangeWeapon.currentAmmo);
+                        
                         RangeWeapon.timeSinceLastAttack = 0;
                         OnRangeAttack();
                         
@@ -50,14 +55,16 @@ namespace AN
                             //Prevent weapon to damage the character wielding it
                             if (damageTarget == characterCausingDamage) return;
                             
+                            
+                            
                             //Todo: Check if the damageTarget can receive damage from this gameObject
 
                             //Todo: Check if target is blocking
 
                             //Todo: Check if target is invulnerable 
-
+                        
                             Debug.DrawLine(transform.position, hitInfo.point, Random.ColorHSV(), 10f);
-
+                            
                             if (damageTarget != null)
                                 DamageTarget(damageTarget);
                         }

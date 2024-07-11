@@ -49,10 +49,10 @@ MonoBehaviour:
   oh_Attack_Action: {fileID: 11400000, guid: 6f636dc8f129fed46a1957d7c99fd01c, type: 2}
   oh_Heavy_Attack_Action: {fileID: 0}
   maxDistance: 200
-  attackRate: 30
+  attackRate: 120
   reloadTime: 3
   timeEachAttack: 0
-  needAmmo: 1
+  needAmmo: 0
   currentAmmo: 6
   magSize: 6
   timeSinceLastAttack: 0

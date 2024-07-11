@@ -18,6 +18,24 @@ namespace AN
         [Header("Quick Slot")]
         [SerializeField] private QuickSlotWeapon[] quickSlot;
         
+        [Header("Weapon Stat")]
+        [SerializeField] private UI_StatBar ammunitionBar;
+        
+        //Ammunition Bar
+        public void SetNewRangeAmunitionValue(float newValue)
+        {
+            ammunitionBar.SetStat(Mathf.RoundToInt(newValue));
+        }
+        
+        public void SetAmmunitionUIMaxValueText(string newMaxValueText)
+        {
+            ammunitionBar.SetMaxValueText(newMaxValueText);
+        }
+        public void SetMaxRangeAmunitionValue(int maxValue)
+        {
+            ammunitionBar.SetMaxStat(maxValue);
+        }
+        
         //Health Bar
         public void SetNewHealthValue(float oldValue, float newValue)
         {
@@ -51,7 +69,7 @@ namespace AN
             staminaBar.SetMaxStat(maxValue);
         }
 
-
+        
         public void RefreshHUD()
         {
             this.gameObject.SetActive(false);

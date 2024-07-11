@@ -75,7 +75,7 @@ namespace AN
                 PlayerCamera.Instance.player = this;
                 PlayerInputManager.Instance.player = this;
                 WorldSaveGameManager.Instance.player = this;
-                
+                PlayerUIManager.instance.playerUIHudManager.SetQuickSlotIcon(playerInventoryManager.weaponInRightHandSlots.Select(e => e.itemId).ToArray(),playerInventoryManager.rightHandWeaponIndex);
                 // sử dụng += để đăng ký phương thức SetNewStamninaValue với OnValueChanged của NetworkVariable,
                 // hai giá trị cũ và mới sẽ luôn được truyền vào phương thức đó khi sự kiện xảy ra.
                 // do OnValueChanged là một sự kiện được thiết kế để thông báo về sự thay đổi của giá trị,

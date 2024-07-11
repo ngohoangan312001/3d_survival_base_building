@@ -49,7 +49,12 @@ namespace AN
                 Debug.Log("Reloading");
                 return false;
             }
-            
+
+            if (!PlayerInputManager.Instance.aimInput)
+            {
+                Debug.Log("Not Aiming");
+                return false;
+            }
             
             return true;
         }

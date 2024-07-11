@@ -48,6 +48,11 @@ namespace AN
             }
                 
         }
+
+        public virtual void SetMaxValueText(string newMaxValueText)
+        {
+            maxValueText.text = newMaxValueText;
+        }
         
         public virtual void SetMaxStat(int maxValue)
         {

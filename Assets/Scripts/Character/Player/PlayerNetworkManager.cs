@@ -66,6 +66,16 @@ namespace AN
             if (player.IsOwner)
             {
                 PlayerUIManager.instance.playerUIHudManager.SetQuickSlotIcon(new []{newID});
+                if (newWeapon is RangeWeaponItem RangeWeapon)
+                {
+                    PlayerUIManager.instance.playerUIHudManager.SetMaxRangeAmunitionValue(RangeWeapon.currentAmmo);
+                    PlayerUIManager.instance.playerUIHudManager.SetNewRangeAmunitionValue(RangeWeapon.magSize);
+                    if (!RangeWeapon.needAmmo)
+                    {
+                        PlayerUIManager.instance.playerUIHudManager.SetAmmunitionUIMaxValueText(" Unlimited");
+                    }
+                }
+                
             }
         }
         

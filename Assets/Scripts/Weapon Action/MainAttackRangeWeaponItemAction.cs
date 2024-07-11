@@ -14,7 +14,7 @@ namespace AN
             base.AttempToPerformAction(playerPerformingAction, weaponPerformingAction);
             
             //If not the owner return, not perform the animation and the modifier 
-            //==> only oner will need to do that
+            //==> only owner will need to do that
             if (!playerPerformingAction.IsOwner) return; 
             
             //Check To Stop Action
