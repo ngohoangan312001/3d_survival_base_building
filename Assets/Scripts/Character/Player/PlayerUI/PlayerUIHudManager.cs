@@ -26,7 +26,10 @@ namespace AN
         {
             ammunitionBar.SetStat(Mathf.RoundToInt(newValue));
         }
-        
+        public void SetAmmunitionUINewValueText(string newValueText)
+        {
+            ammunitionBar.SetNewValueText(newValueText);
+        }
         public void SetAmmunitionUIMaxValueText(string newMaxValueText)
         {
             ammunitionBar.SetMaxValueText(newMaxValueText);

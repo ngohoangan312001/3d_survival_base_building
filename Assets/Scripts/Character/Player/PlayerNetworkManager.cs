@@ -24,9 +24,14 @@ namespace AN
             player = GetComponent<PlayerManager>();
         }
 
-        public void SetCharacterActionHand(bool rightHandAction)
+        public void SetCharacterActionHand(bool rightHandAction, bool twoHandAction = false)
         {
-            if (rightHandAction)
+            if (twoHandAction)
+            {
+                isUsingRightHand.Value = true;
+                isUsingLeftHand.Value = true;
+            }
+            else if (rightHandAction)
             {
                 isUsingRightHand.Value = true;
                 isUsingLeftHand.Value = false;
@@ -72,7 +77,8 @@ namespace AN
                     PlayerUIManager.instance.playerUIHudManager.SetNewRangeAmunitionValue(RangeWeapon.magSize);
                     if (!RangeWeapon.needAmmo)
                     {
-                        PlayerUIManager.instance.playerUIHudManager.SetAmmunitionUIMaxValueText(" Unlimited");
+                        PlayerUIManager.instance.playerUIHudManager.SetAmmunitionUIMaxValueText("Unlimited");
+                        PlayerUIManager.instance.playerUIHudManager.SetAmmunitionUINewValueText("Unlimited");
                     }
                 }
                 

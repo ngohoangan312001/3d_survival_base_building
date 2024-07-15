@@ -43,11 +43,11 @@ namespace AN
         //Aim down sign
         [SerializeField] private bool adsInput;
         
-        [FormerlySerializedAs("leftClickInput")]
         [Header("COMBAT INPUT")]
         [SerializeField] private bool left_Click_Input;
         [SerializeField] private bool right_Click_Input;
         [SerializeField] private bool hold_Right_Click_Input;
+        [SerializeField] private bool r_Input;
         
         [Header("QUICK SLOT INPUT")]
         [SerializeField] private bool switchRightWeaponInput;
@@ -153,6 +153,7 @@ namespace AN
                 playerControls.PlayerAction.RightClick.performed += i => right_Click_Input = true;
                 playerControls.PlayerAction.HoldRightClick.performed += i => hold_Right_Click_Input = true;
                 playerControls.PlayerAction.HoldRightClick.canceled += i => hold_Right_Click_Input = false;
+                playerControls.PlayerAction.Reload.performed += i => r_Input = true;
                 
                 //Switch Weapon
                 playerControls.PlayerAction.SwitchRightWeapon.performed += i => switchRightWeaponInput = true;
@@ -210,6 +211,8 @@ namespace AN
             HandleAttackInput();
             //HandleHeavyAttackInput();
             HandleChargeAttackInput();
+
+            HandleRInput();
             
             HandleSwitchWeaponInput();
         }
@@ -323,6 +326,21 @@ namespace AN
                 //TODO: use 2 hand action when character equip 2 hand weapon
                 
                 player.playerCombatManager.PerformWeaponBaseAction(player.playerInventoryManager.currentRightHandWeapon.oh_Attack_Action,player.playerInventoryManager.currentRightHandWeapon);
+            }
+        }
+        
+        private void HandleRInput()
+        {
+            if (r_Input && player.playerInventoryManager.currentRightHandWeapon is RangeWeaponItem currentRightHandRangeWeapon)
+            {
+                r_Input = false;
+                //TODO: return (do nothing) if menu or UI window is open
+                
+                player.playerNetworkManager.SetCharacterActionHand(true, true);
+                
+                //TODO: use 2 hand action when character equip 2 hand weapon
+                
+                player.playerCombatManager.PerformWeaponBaseAction(currentRightHandRangeWeapon.reload_Action,player.playerInventoryManager.currentRightHandWeapon);
             }
         }
         

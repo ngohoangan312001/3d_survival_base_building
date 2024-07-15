@@ -54,6 +54,11 @@ namespace AN
             maxValueText.text = newMaxValueText;
         }
         
+        public virtual void SetNewValueText(string newValueText)
+        {
+            currentValueText.text = newValueText;
+        }
+        
         public virtual void SetMaxStat(int maxValue)
         {
             slider.maxValue = maxValue;

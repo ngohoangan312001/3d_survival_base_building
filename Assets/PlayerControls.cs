@@ -373,6 +373,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3ad9ec0-c985-434b-a9b3-99353161a762"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -562,6 +571,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Hold Right Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7503a570-7fd4-4ec6-890d-a079ce9535f8"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -629,6 +649,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerAction_LockOn = m_PlayerAction.FindAction("Lock On", throwIfNotFound: true);
         m_PlayerAction_SeekLeftLockOnTarget = m_PlayerAction.FindAction("Seek Left Lock On Target", throwIfNotFound: true);
         m_PlayerAction_SeekRightLockOnTarget = m_PlayerAction.FindAction("Seek Right Lock On Target", throwIfNotFound: true);
+        m_PlayerAction_Reload = m_PlayerAction.FindAction("Reload", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Delete = m_UI.FindAction("Delete", throwIfNotFound: true);
@@ -806,6 +827,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerAction_LockOn;
     private readonly InputAction m_PlayerAction_SeekLeftLockOnTarget;
     private readonly InputAction m_PlayerAction_SeekRightLockOnTarget;
+    private readonly InputAction m_PlayerAction_Reload;
     public struct PlayerActionActions
     {
         private @PlayerControls m_Wrapper;
@@ -823,6 +845,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @LockOn => m_Wrapper.m_PlayerAction_LockOn;
         public InputAction @SeekLeftLockOnTarget => m_Wrapper.m_PlayerAction_SeekLeftLockOnTarget;
         public InputAction @SeekRightLockOnTarget => m_Wrapper.m_PlayerAction_SeekRightLockOnTarget;
+        public InputAction @Reload => m_Wrapper.m_PlayerAction_Reload;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -871,6 +894,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SeekRightLockOnTarget.started += instance.OnSeekRightLockOnTarget;
             @SeekRightLockOnTarget.performed += instance.OnSeekRightLockOnTarget;
             @SeekRightLockOnTarget.canceled += instance.OnSeekRightLockOnTarget;
+            @Reload.started += instance.OnReload;
+            @Reload.performed += instance.OnReload;
+            @Reload.canceled += instance.OnReload;
         }
 
         private void UnregisterCallbacks(IPlayerActionActions instance)
@@ -914,6 +940,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SeekRightLockOnTarget.started -= instance.OnSeekRightLockOnTarget;
             @SeekRightLockOnTarget.performed -= instance.OnSeekRightLockOnTarget;
             @SeekRightLockOnTarget.canceled -= instance.OnSeekRightLockOnTarget;
+            @Reload.started -= instance.OnReload;
+            @Reload.performed -= instance.OnReload;
+            @Reload.canceled -= instance.OnReload;
         }
 
         public void RemoveCallbacks(IPlayerActionActions instance)
@@ -1001,6 +1030,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnLockOn(InputAction.CallbackContext context);
         void OnSeekLeftLockOnTarget(InputAction.CallbackContext context);
         void OnSeekRightLockOnTarget(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

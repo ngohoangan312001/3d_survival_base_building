@@ -77,8 +77,11 @@ namespace AN
         {
             if (currentWeapon is RangeWeaponItem RangeWeapon)
             {
-                if (RangeWeapon.timeSinceLastAttack <= (1f / (RangeWeapon.attackRate / 60f)))
+                if (RangeWeapon.timeSinceLastAttack <= RangeWeapon.GetAttackTimePerMinute())
                     RangeWeapon.timeSinceLastAttack += Time.deltaTime;
+                
+                if (RangeWeapon.currentReloadProgressTime <= RangeWeapon.reloadTime)
+                    RangeWeapon.currentReloadProgressTime += Time.deltaTime;
             }
         }
 

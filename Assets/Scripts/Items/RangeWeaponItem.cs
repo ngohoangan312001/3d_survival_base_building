@@ -11,9 +11,12 @@ namespace AN
     {
         [Header("Weapon Range Option")] 
         public float maxDistance;
-        public int attackRate;
         public int reloadTime;
+        public float currentReloadProgressTime;
         public float timeEachAttack = 0;
+        
+        [Header("Attack Per Second")] 
+        public int attackRate;
         
         [Header("Ammunition")]
         public bool needAmmo = true;
@@ -22,13 +25,17 @@ namespace AN
         public float timeSinceLastAttack = 0;
         
         [HideInInspector] public bool isReloading = false;
+        
+        [Header("Actions")] 
+        public WeaponItemAction reload_Action;
+        
         //Weapon Deflection ( weapon will be bounce off another weapon if being guard )
         
         //Can be buffed
 
         public bool CanFire()
         {
-            timeEachAttack = 1f / (attackRate / 60f);
+            timeEachAttack = GetAttackTimePerMinute();
             // attackRate       => Attack per minute
             // attackRate/60    => Attack per second
             // 1/attackRate/60  => Time between each attack in 1 second
@@ -57,6 +64,28 @@ namespace AN
             }
             
             return true;
+        }
+
+        public float GetAttackTimePerMinute()
+        {
+            return 1f / (attackRate / 60f);
+        }
+        
+        public bool CanReload()
+        {
+            if (!needAmmo) return false;
+
+            if (currentAmmo >= magSize) return false;
+            
+            if (currentReloadProgressTime < reloadTime) return false;
+            
+            return true;
+        }
+
+        public void RangeReload()
+        {
+            currentAmmo = magSize;
+            PlayerUIManager.instance.playerUIHudManager.SetMaxRangeAmunitionValue(currentAmmo);
         }
     }
 }

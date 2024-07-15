@@ -18,7 +18,7 @@ namespace AN
         [SerializeField] float runningSpeed = 5;
         [SerializeField] float sprintingSpeed = 8;
         [SerializeField] private int sprintStaminaCost = 0;
-        
+        [SerializeField] private float maxAngleToRotate = 0;
         [SerializeField] float rotationSpeed = 15;
         private Vector3 moveDirection;
         private Vector3 targetRotationDirection;
@@ -174,7 +174,7 @@ namespace AN
                 if (player.playerNetworkManager.isAiming.Value)
                 {
                     float rotationAngle = Quaternion.Angle(transform.rotation, PlayerCamera.Instance.cameraObject.transform.rotation);
-                    if (rotationAngle >= 70)
+                    if (rotationAngle >= maxAngleToRotate)
                     {
                         targetRotationDirection += PlayerCamera.Instance.cameraObject.transform.forward;
                     }

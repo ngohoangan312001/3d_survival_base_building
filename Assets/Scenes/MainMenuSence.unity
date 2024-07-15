@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
-    m_SelectedColor: {r: 0.735849, g: 0.7358328, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7372549, g: 0.7372549, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2985,7 +2985,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
-    m_SelectedColor: {r: 0.735849, g: 0.7358328, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7372549, g: 0.7372549, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5940,7 +5940,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
-    m_SelectedColor: {r: 0.735849, g: 0.7358328, b: 0, a: 1}
+    m_SelectedColor: {r: 0.7372549, g: 0.7372549, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -6650,13 +6650,21 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
+      propertyPath: weaponItemActions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03f6eedad7f2646019819df2fe84b3a2, type: 2}
+    - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
+      propertyPath: weaponItemActions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: dfbb15040e1f242d693912dc4d1f489e, type: 2}
+    - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
       propertyPath: weaponItemActions.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 41e0743e05393433083463ebba2e2188, type: 2}
     - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
       propertyPath: weaponItemActions.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 03f6eedad7f2646019819df2fe84b3a2, type: 2}
+      objectReference: {fileID: 11400000, guid: a8c054140851847a79ad61e76139a914, type: 2}
     - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
       propertyPath: weaponItemActions.Array.data[4]
       value: 
@@ -6664,7 +6672,11 @@ PrefabInstance:
     - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
       propertyPath: weaponItemActions.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: a8c054140851847a79ad61e76139a914, type: 2}
+      objectReference: {fileID: 11400000, guid: fa8802d9ecc9c4d8792d06b244084c24, type: 2}
+    - target: {fileID: 3255015977163331956, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
+      propertyPath: weaponItemActions.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: fa8802d9ecc9c4d8792d06b244084c24, type: 2}
     - target: {fileID: 7139093573298666402, guid: dbb1b45f6260e4defb865dd5b08ba720, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.377786

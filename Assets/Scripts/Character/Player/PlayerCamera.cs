@@ -61,11 +61,16 @@ namespace AN
             if (PlayerInputManager.Instance.aimInput && PlayerInputManager.Instance.CheckIfWeaponCanAim())
             {
                 Ray ray = cameraObject.ScreenPointToRay(Input.mousePosition);
-
+                
                 if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, targetLayer))
                 {
                     player.playerAnimatorManager.aimTarget.position = raycastHit.point;
                 }
+                else
+                {
+                    player.playerAnimatorManager.aimTarget.position =ray.GetPoint(float.MaxValue);
+                }
+                
                 player.playerAnimatorManager.aimRig.weight = 1;
             }
             else
